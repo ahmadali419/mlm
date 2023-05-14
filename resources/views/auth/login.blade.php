@@ -13,7 +13,7 @@
 @endsection
 @section('content')
     <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
+    {{-- <section class="breadcrumbs">
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
@@ -24,16 +24,16 @@
                 </ol>
             </div>
 
-        </div>
+        </div> --}}
     </section><!-- End Breadcrumbs -->
 
-    <section class="inner-page">
+    <section class="inner-page" style="margin-top:64px">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 offset-md-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="text-center">Sign In to {{env('APP_NAME')}}</h3>
+                            <h5 class="text-center" style="margin-bottom:10px">Sign In</h5>
                                 <p class="text-center">New Member? <a href="{{ route('register') }}">Click Here</a></p>
                                 <form 
                                     class="form w-100 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate"

@@ -7,6 +7,7 @@ use App\Models\Contact;
 use App\Models\Package;
 use App\Models\User;
 use Auth;
+use PDO;
 
 class HomeController extends Controller
 {
@@ -61,5 +62,13 @@ class HomeController extends Controller
             return "success";
         }
         return "error";
+    }
+
+    public function about(){
+        return view('about');
+    }
+
+    public function contact(){
+        return view('contact');
     }
 }

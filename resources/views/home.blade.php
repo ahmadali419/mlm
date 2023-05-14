@@ -14,684 +14,442 @@
     <link href="<?= setting('favicon') ?>" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+    <link href="{{asset("assets/images/logoIcon/logo.png")}}" rel="apple-touch-icon">
+    <link href="{{ asset("assets/global/css/bootstrap.css") }}" rel="stylesheet">
+  <link href="{{ asset("assets/global/css/all.css") }}" rel="stylesheet">
+  <link href="{{ asset('assets/global/css/line-awesome.css') }}" rel="stylesheet" />
 
-    <!-- Vendor CSS Files -->
-    <link href="../homepage-assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="../homepage-assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../homepage-assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="../homepage-assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="../homepage-assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="../homepage-assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="../homepage-assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="{{ asset('homepage-assets/css/style.css') }}" rel="stylesheet">
-    <style>
-        .potential_area .potential .ptl_containt {
-            box-shadow: 0px 0px 40px 0px rgb(233 233 233 / 75%);
-            text-align: center;
-            background: #ffffff;
-            padding: 40px 20px;
-        }
-
-        .potential_area .potential {
-            margin-bottom: 30px;
-        }
-
-        .potential_area .potential .ptl_containt .heding {
-            font: 600 26px/36px "Nunito", sans-serif;
-            color: #f59019;
-        }
-
-        .potential_area .potential {
-            margin-bottom: 30px;
-        }
-
-        .theme_btn {
-          color: #fff;
-          background: rgba(0, 0, 0, 0.8);
-          text-align: center !important;
-          font: 600 16px/50px "Nunito", sans-serif;
-          display: inline-block;
-          padding: 0 20px;
-          position: relative;
-          overflow: hidden;
-          border-radius: 10px;
-          z-index: 1;
-      }
-      #hero {
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-      }
-      
-    </style>
+  <link href="{{ asset("assets/templates/basic/css/owl.css") }}" rel="stylesheet">
+  <link href="{{ asset("assets/templates/basic/css/bootstrap-fileinput.css") }}" rel="stylesheet">
+  <link href="{{ asset('assets/templates/basic/css/main.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/templates/basic/css/custom.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/templates/basic/css/color.php?color=7202bb&secondColor=3264f5') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    
 </head>
 
 <body>
+  <div class="preloader">
+    <div class="spinner">
+        <div class="cube1"><img src="assets/images/logoIcon/favicon.png" alt="cube1"></div>
+        <div class="cube2"><img src="assets/images/logoIcon/favicon.png" alt="cube2"></div>
+    </div>
+</div>
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top ">
-        <div class="container d-flex align-items-center justify-content-lg-between">
 
-            <h1 class="logo me-auto me-lg-0"><a href="/">Tudor Global Trading<span>.</span></a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="../homepage-assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-            <nav id="navbar" class="navbar order-last order-lg-0">
-                <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="#services">Packages</a></li>
-                    <!-- <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li> -->
-                    <li><a class="nav-link scrollto" href="#team">Team</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                    @if (Auth::check())
-                        <li><a class="nav-link scrollto" href="{{ route('client.dashboard') }}">Dashboard</a>
-                        </li>
-                        <li><a class="nav-link scrollto" href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">Logout</a>
-                        </li>
-                        <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-                    @else
-                        <li><a class="nav-link scrollto" href="{{ route('login') }}">Login</a></li>
-                        <li><a href="{{ route('register') }}">Register</a></li>
-                    @endif
-                    </li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
+<a class="scrollToTop" href="javascript:void(0)"><i class="las la-angle-up"></i></a>
+<div class="cursor"></div>
+<div class="overlay"></div>
 
-            <!-- <a href="#about" class="get-started-btn scrollto">Get Started</a> -->
-
-        </div>
-    </header><!-- End Header -->
-
-    <!-- ======= Hero Section ======= -->
-    <section style="background: url('<?= setting('banner_image') ?>') top center;" id="hero"
-        class="d-flex align-items-center justify-content-center">
-        <div class="container" data-aos="fade-up">
-
-            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
-                <div class="col-xl-6 col-lg-8">
-                    <h1><?= setting('hero_title') ?><span>.</span></h1>
-                    <h2><?= setting('hero_sub_title') ?></h2>
-                </div>
+  <header class="header-section">
+    <div class="container">
+        <div class="header-wrapper">
+            <div class="logo">
+                <a href="{{ route('index') }}">
+                    <img src="assets/images/logoIcon/logo.png" alt="site-logo">
+                </a>
             </div>
+            <ul class="menu">
+                <li class="nav-item">
+                    <a class="nav-link same-page " href="#how_work">Home</a>
+                </li>
 
-            <!-- <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-store-line"></i>
-            <h3><a href="">Lorem Ipsum</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-bar-chart-box-line"></i>
-            <h3><a href="">Dolor Sitema</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-calendar-todo-line"></i>
-            <h3><a href="">Sedare Perspiciatis</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-paint-brush-line"></i>
-            <h3><a href="">Magni Dolores</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-database-2-line"></i>
-            <h3><a href="">Nemos Enimade</a></h3>
-          </div>
-        </div>
-      </div> -->
+              
+                
 
-        </div>
-    </section><!-- End Hero -->
+                <li class="nav-item">
+                    <a class="nav-link same-page" href="#faq">FAQ</a>
+                </li>
 
-    <main id="main">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('about') }}">About</a>
+                </li>
 
-        <!-- ======= About Section ======= -->
-        <section id="about" class="about">
-            <div class="container" data-aos="fade-up">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                </li>
 
-                <div class="row">
-                    <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-                        <img src="<?= setting('left_text_section_image') ?>" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right"
-                        data-aos-delay="100">
-                        <?= setting('left_text_section_text') ?>
-                    </div>
-                </div>
+            </ul>
 
+
+           
+            <div class="header-bar m-0">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </section><!-- End About Section -->
-
-        <!-- ======= Clients Section ======= -->
-        <!-- <section id="clients" class="clients">
-      <div class="container" data-aos="zoom-in">
-
-        <div class="clients-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="../homepage-assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="../homepage-assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="../homepage-assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="../homepage-assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="../homepage-assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="../homepage-assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="../homepage-assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="../homepage-assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
-          </div>
-          <div class="swiper-pagination"></div>
         </div>
+    </div>
+</header>
 
+
+<section class="banner-section bg--theme--overlay">
+  <div class="shapes-banner bg_img" data-background="assets/images/frontend/banner/62e63eef3a7bc1659256559.jpg">
+  </div>
+  <div class="particles-js" id="particles-js"></div>
+
+  <div class="banner-shape">
+      <img src="assets/templates/basic/images/wave.png" alt="banner">
+  </div>
+
+
+  <div class="container">
+      <div class="banner__content text--white">
+          <h4 class="banner__category text--white">Welcome To</h4>
+          <h1 class="banner__title text--white">Glacier Coin Mining Platform</h1>
+          <p class="banner__text"> Start mining the quick way with our world renowned software</p>
       </div>
-    </section> -->
-        <!-- End Clients Section -->
+      <div class="banner__bottom__content text--white">
 
-        <!-- ======= Features Section ======= -->
-        <!-- <section id="features" class="features">
-      <div class="container" data-aos="fade-up">
+          
 
-        <div class="row">
-          <div class="image col-lg-6" style='background-image: url("../homepage-assets/img/features.jpg");' data-aos="fade-right"></div>
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
-            <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
-              <i class="bx bx-receipt"></i>
-              <h4>Est labore ad</h4>
-              <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-            </div>
-            <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-              <i class="bx bx-cube-alt"></i>
-              <h4>Harum esse qui</h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-            </div>
-            <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-              <i class="bx bx-images"></i>
-              <h4>Aut occaecati</h4>
-              <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-            </div>
-            <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-              <i class="bx bx-shield"></i>
-              <h4>Beatae veritatis</h4>
-              <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-            </div>
+          <div class="buttons" style="text-align: center;">
+              <button type="button" class="btn btn-outline-warning"><a href="{{ route('register') }}" style="color: white;">
+                      Register </a></button>
+              <button type="button" class="btn btn-warning"><a href="{{ route('login') }}"
+                      style="color: white;">Login</a></button>
+
           </div>
-        </div>
-
       </div>
-    </section> -->
-        <!-- End Features Section -->
-        <!-- ======= Services Section ======= -->
-        <section id="services" class="services potential_area">
-            <div class="container" data-aos="fade-up">
+  </div>
+</section>
 
-                <div class="section-title">
-                    <h2>Packages</h2>
-                    <p>Check our Pacakges</p>
-                </div>
-                <div class="row">
-                    @forelse ($packages as $package)
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card">
-                            <img class="card-img-top" src="{{asset($package->image)}}" alt="Card image cap">
-                            <div class="card-body">
-                                <h4 class="card-title"><a href="{{ route('plan') }}">{{$package->title}}</a></h4>
-                                <h6>Personal: ${{ number_format($package->min_price) }} - ${{ number_format($package->max_price) }}</h6>
-                                <div class="table-responsive">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Investment Bonus</th>
-                                                    <th>Profit Bonus</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    @forelse ($package->levels as $levelItem)
-                                                        <tr>
-                                                            <td>{{ $levelItem->level ?? '' }} Level:
-                                                                {{ $levelItem->bonus_percentage ?? '' }}%</td>
-                                                            <td>{{ $levelItem->level ?? '' }} Level:
-                                                                {{ $levelItem->profit_percentage ?? '' }}%</td>
 
-                                                        </tr>
 
-                                                    @empty
-                                                    <p class="text-danger text-center">Sorry No Level found!</p>
-                                                    @endforelse
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                <!-- <a href="#" class="btn btn-outline-primary waves-effect">Invest</a> -->
-                            </div>
-                        </div>
-                    </div>
-                    @empty
-                    @endforelse
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <a href="{{ route('plan') }}" class="theme_btn mt-4 mb-5" style="margin: auto; display: flex; width: fit-content;">More Details</a>
+<section class="how-section pt-120 pb-120" id="how_work">
+  <div class="container">
+      <div class="section__header section__header__center">
+          <span class="section__cate">Working Process</span>
+          <h3 class="section__title">How To Start</h3>
+          <p>Some steps for Earn Money</p>
+      </div>
+      <div class="row g-4">
+          <div class="col-sm-6 col-lg-3 mb-30">
+              <div class="how__item">
+                  <div class="how__thumb">
+                      <div class="thumb">1</div>
                   </div>
-                </div>
-               
-
-            </div>
-        </section><!-- End Services Section -->
-        <!-- ======= Cta Section ======= -->
-        <section id="cta" class="cta"
-            style="background:url('<?= setting('call_to_action_bg_image') ?>') fixed center center">
-            <div class="container" data-aos="zoom-in">
-
-                <div class="text-center">
-                    <h3><?= setting('call_to_action_title') ?></h3>
-                    <p> <?= setting('call_to_action_text') ?></p>
-                    <a class="cta-btn"
-                        href="<?= setting('call_to_action_btn_link') ?>"><?= setting('call_to_action_btn_text') ?></a>
-                </div>
-
-            </div>
-        </section><!-- End Cta Section -->
-
-        <!-- ======= Portfolio Section ======= -->
-        <!-- <section id="portfolio" class="portfolio">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Check our Portfolio</p>
-        </div>
-
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="../homepage-assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="../homepage-assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
+                  <h5 class="title">Enter Wallet Address</h5>
               </div>
-            </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="../homepage-assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="../homepage-assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
+          <div class="col-sm-6 col-lg-3 mb-30">
+              <div class="how__item">
+                  <div class="how__thumb">
+                      <div class="thumb">2</div>
+                  </div>
+                  <h5 class="title">Deposit Money</h5>
               </div>
-            </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="../homepage-assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="../homepage-assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
+          <div class="col-sm-6 col-lg-3 mb-30">
+              <div class="how__item">
+                  <div class="how__thumb">
+                      <div class="thumb">3</div>
+                  </div>
+                  <h5 class="title">Start Mining</h5>
               </div>
-            </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="../homepage-assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="../homepage-assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
+          <div class="col-sm-6 col-lg-3 mb-30">
+              <div class="how__item">
+                  <div class="how__thumb">
+                      <div class="thumb">4</div>
+                  </div>
+                  <h5 class="title">Withdraw</h5>
               </div>
-            </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="../homepage-assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="../homepage-assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
+      </div>
+  </div>
+</section>
+<section class="about-section pt-120 pb-120" id="about-us">
+  <div class="container">
+      <div class="row gy-5">
+          <div class="col-lg-6">
+              <div class="about__thumb">
+                  <div class="thumb">
+                      <img src="assets/images/frontend/about/62f0df5e855541659952990.jpg" alt="about">
+                  </div>
+                  <blockquote class="chairman--quote">
+                      Successfully Providing the Best Mining Service from 24 years
+                  </blockquote>
               </div>
-            </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="../homepage-assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="../homepage-assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
+          <div class="col-lg-6">
+              <div class="about__content">
+                  <div class="section__header">
+                      <span class="section__cate">About Us</span>
+                      <h3 class="section__title">Know What We Are</h3>
+                      <p>Glacier Coin </p>
+                  </div>
+                  <p class="about__para">Coin mining is the process of validating cryptocurrency transactions and
+                      adding them to a blockchain ledger in exchange for a reward of newly minted coins. This
+                      process requires powerful computers and specialized software to solve complex mathematical
+                      problems that confirm the legitimacy of each transaction.</p>
+                  <ul class="about--list">
+                      <li>Simple</li>
+                      <li>Secure</li>
+                      <li>24/7 Available</li>
+                  </ul>
               </div>
-            </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="../homepage-assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="../homepage-assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
+      </div>
+  </div>
+</section>
+<section
+  class="feature-section pt-120 pb-120 bg--theme--overlay top--wave-wrapper bottom--wave-wrapper bg_img bg_fixed"
+  data-background="assets/images/frontend/feature/62e651aa303d61659261354.jpg">
+  <div class="banner-shape">
+      <img src="assets/templates/basic/images/wave.png" alt="banner">
+  </div>
+  <div class="banner-shape-top">
+      <img src="assets/templates/basic/images/wave-rev.png" alt="banner">
+  </div>
+  <div class="container">
+      <div class="section__header section__header__center text--white">
+          <span class="section__cate">
+              Feature
+          </span>
+          <h3 class="text--white pb-3">Our Special Feature</h3>
+          <p>Simple and Secure</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-4">
+              <div class="feature__item">
+                  <div class="feature__icon">
+                      <i class="las la-headset"></i>
+                  </div>
+                  <div class="feature__content">
+                      <h5 class="feature__title">24/7 Support</h5>
+                      <p class="text-white">
+                          Every Time Available
+                      </p>
+                  </div>
               </div>
-            </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="../homepage-assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="../homepage-assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
+          <div class="col-md-6 col-lg-4">
+              <div class="feature__item">
+                  <div class="feature__icon">
+                      <i class="las la-globe-africa"></i>
+                  </div>
+                  <div class="feature__content">
+                      <h5 class="feature__title">Global</h5>
+                      <p class="text-white">
+                          All World
+                      </p>
+                  </div>
               </div>
-            </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="../homepage-assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="../homepage-assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
+          <div class="col-md-6 col-lg-4">
+              <div class="feature__item">
+                  <div class="feature__icon">
+                      <i class="las la-lock"></i>
+                  </div>
+                  <div class="feature__content">
+                      <h5 class="feature__title">Secure</h5>
+                      <p class="text-white">
+                          Protected
+                      </p>
+                  </div>
               </div>
-            </div>
           </div>
-
-        </div>
 
       </div>
-    </section> -->
-        <!-- End Portfolio Section -->
+  </div>
+</section>
+<section class="faqs-section pt-120 pb-120" id="faq">
+  <div class="container">
+      <div class="section__header section__header__center">
+          <span class="section__cate">FAQ&#039;S</span>
+          <h3 class="section__title">Frequently Asked Questions</h3>
+          <p>24/7 Asked Questions!</p>
+      </div>
+      <div class="row justify-content-center gy-3">
+          <div class="col-lg-6">
+              <div class="faq__wrapper">
+                  <div class="faq__item">
+                      <div class="faq__title">
+                          <h5 class="title">What is Cryptocurrency?</h5>
+                          <span class="right-icon"></span>
+                      </div>
+                      <div class="faq__content">
+                          <p>Cryptocurrency is decentralized digital money, based on blockchain technology. You
+                              may be familiar with the most popular versions, Bitcoin and Ethereum, but there are
+                              more than 5,000 different cryptocurrencies in circulation,
+                              according to CoinLore.</p>
+                      </div>
+                  </div>
+                  <div class="faq__item">
+                      <div class="faq__title">
+                          <h5 class="title">What is Coin Mining?</h5>
+                          <span class="right-icon"></span>
+                      </div>
+                      <div class="faq__content">
+                          <p>Mining is the process of validating transactions on a blockchain network and creating
+                              new blocks on the blockchain. In the case of cryptocurrencies, miners compete to
+                              solve complex mathematical equations using their computer hardware, and the first
+                              one to solve the equation is rewarded with a certain amount of the cryptocurrency
+                              being mined.
 
-        <!-- ======= Counts Section ======= -->
-        <section id="counts" class="counts">
-            <div class="container" data-aos="fade-up">
+                          </p>
+                      </div>
+                  </div>
+                  <div class="faq__item">
+                      <div class="faq__title">
+                          <h5 class="title">what is Mining Process?</h5>
+                          <span class="right-icon"></span>
+                      </div>
+                      <div class="faq__content">
+                          <p>The mining process can be profitable for those who have the necessary hardware and
+                              electricity resources. However, as the difficulty of mining increases and the reward
+                              for mining decreases, it can become less profitable over time. Additionally, mining
+                              can be energy-intensive and have a negative environmental impact if the electricity
+                              used to power the mining rigs comes from non-renewable sources.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
 
-                <div class="row no-gutters">
-                    <div style="background: url('<?= setting('right_text_section_image') ?>') center center no-repeat"
-                        class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"
-                        data-aos="fade-right" data-aos-delay="100"></div>
-                    <div class="col-xl-7 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left"
-                        data-aos-delay="100">
-                        <div class="content d-flex flex-column justify-content-center">
-                            <?= setting('right_text_section_text') ?>
-                        </div><!-- End .content-->
-                    </div>
-                </div>
+      </div>
+  </div>
+</section>
+<section
+  class="counter-section bg--theme--overlay-2 bg_fixed top--wave-wrapper bottom--wave-wrapper pt-120 pb-120 bg_img"
+  data-background="images/frontend/counter/62e64031c25bd1659256881.jpg">
+  <div class="banner-shape">
+      <img src="assets/templates/basic/images/wave.png" alt="banner">
+  </div>
+  <div class="banner-shape-top">
+      <img src="assets/templates/basic/images/wave-rev.png" alt="banner">
+  </div>
+  <div class="container">
+      <div class="row g-4">
+          <div class="col-sm-6 col-lg-3">
+              <div class="counter__item">
+                  <div class="counter__header">
+                      <i class="las la-user-alt"></i>
+                      <h3 class="title">
+                          <span class="rafcounter" data-counter-end="35">00</span>
+                          <span>K</span>
+                      </h3>
+                  </div>
+                  <p>Happy Miners</p>
+              </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+              <div class="counter__item">
+                  <div class="counter__header">
+                      <i class="fas fa-money-check-alt"></i>
+                      <h3 class="title">
+                          <span class="rafcounter" data-counter-end="230">00</span>
+                          <span>K</span>
+                      </h3>
+                  </div>
+                  <p>Deposit</p>
+              </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+              <div class="counter__item">
+                  <div class="counter__header">
+                      <i class="las la-wallet"></i>
+                      <h3 class="title">
+                          <span class="rafcounter" data-counter-end="1000">00</span>
+                          <span>+</span>
+                      </h3>
+                  </div>
+                  <p>Withdraw</p>
+              </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+              <div class="counter__item">
+                  <div class="counter__header">
+                      <i class="las la-language"></i>
+                      <h3 class="title">
+                          <span class="rafcounter" data-counter-end="15">00</span>
+                          <span>+</span>
+                      </h3>
+                  </div>
+                  <p>Supported Language</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
 
-            </div>
-        </section><!-- End Counts Section -->
 
-        <!-- ======= Team Section ======= -->
-        <section id="team" class="team">
-            <div class="container" data-aos="fade-up">
 
-                <div class="section-title">
-                    <h2>Team</h2>
-                    <p>Check our Team</p>
-                </div>
-                <?php 
-          $teams = team();
-          if ($teams) {
-          foreach ($teams as $key => $team) {
-        ?>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                            <div class="member-img">
-                                <img src="<?= $team->profile_pic ?>" class="img-fluid" alt="">
-                                <div class="social">
-                                    @if ($team->twitter_link)
-                                        <a href="<?= $team->twitter_link ?>"><i class="bi bi-twitter"></i></a>
-                                    @endif
-                                    @if ($team->facebook_link)
-                                        <a href="<?= $team->facebook_link ?>"><i class="bi bi-facebook"></i></a>
-                                    @endif
-                                    @if ($team->instagram_link)
-                                        <a href="<?= $team->instagram_link ?>"><i class="bi bi-instagram"></i></a>
-                                    @endif
-                                    @if ($team->linkedin_link)
-                                        <a href="<?= $team->linkedin_link ?>"><i class="bi bi-linkedin"></i></a>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="member-info">
-                                <h4>{{ $team->name }}</h4>
-                                <span>{{ $team->designation }}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <?php
-          } 
-        } 
-      ?>
-            </div>
-        </section><!-- End Team Section -->
+<div class="partners-section pt-120 pb-120">
+  <div class="container">
+      <div class="section__header section__header__center">
+          <span class="section__cate">Partners</span>
+          <h3 class="section__title">Our Partners</h3>
+          <p>we have currently 300+ partners from different marketplace, and it&#039;s growing day by day. we are
+              moving slowly because our main focus remains to provide the best solution and quality.</p>
+      </div>
+      <div class="partner-slider owl-theme owl-carousel">
+          <a class="partner-thumb" ">
+              <img src="assets/images/frontend/partners/62ef9170668bc1659867504.png" alt="partner">
+             
+          </a>
+          <a class="partner-thumb" ">
+              <img src="assets/images/frontend/partners/62ef91759b3e61659867509.png" alt="partner">
+              
+          </a>
+       
+      </div>
+  </div>
+</div>
 
-        <!-- ======= Contact Section ======= -->
-        <section id="contact" class="contact">
-            <div class="container" data-aos="fade-up">
 
-                <div class="section-title">
-                    <h2><?= setting('contact_us_title') ?></h2>
-                    <p><?= setting('contact_us_sub_title') ?></p>
-                </div>
+<footer class="bg--theme--overlay footer-section bg_fixed bg_img"
+  data-background="assets/images/frontend/footer/62e641699f49a1659257193.jpg">
+  <div class="banner-shape-top">
+      <img src="assets/templates/basic/images/wave-rev.png" alt="banner">
+  </div>
+  <div class="container">
+      <div class="footer-top pt-120  top--wave-wrapper  pb-3">
+          <div class="footer-logo">
+              <a href="{{ route('index') }}">
+                  <img src="assets/images/logoIcon/logo.png" alt="logo">
+              </a>
+          </div>
+          <p class="footer--text">A Glacier Coin mining website is an online platform that provides information,
+              tools, and resources for cryptocurrency miners.</p>
+          <ul class="social__icons">
+              <li>
+                  <a class="facebook" href="https://www.facebook.com/">
+                      <i class="fab fa-facebook-f"></i> </a>
+              </li>
+              <li>
+                  <a class="facebook" href="https://www.twitter.com/">
+                      <i class="fab fa-twitter"></i> </a>
+              </li>
+              <li>
+                  <a class="facebook" href="https://www.linkedin.com/">
+                      <i class="fab fa-linkedin-in"></i> </a>
+              </li>
+          </ul>
 
-                <!-- <div>
-          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
-        </div> -->
+          <ul class="footer-links pt-5">
+              <li class="p-0"><a href="#">Privacy Policy</a></li>
+              <li class="p-0"><a href="#">Terms of Service</a></li>
+          </ul>
+      </div>
+      <div class="footer-bottom py-3">
+          <div class="copyright text--white text-center">
+              <span>Copyright &copy; 2023 . All Rights Reserved (M a r s a d)</span>
+          </div>
+      </div>
+  </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-                <div class="row mt-5">
+<script src="{{ asset('assets/global/js/bootstrap.bundle.js') }}"></script>
 
-                    <div class="col-lg-4">
-                        <div class="info">
-                            <div class="address">
-                                <i class="bi bi-geo-alt"></i>
-                                <h4><?= setting('contact_us_location_title') ?></h4>
-                                <p><?= setting('contact_us_location_address') ?></p>
-                            </div>
 
-                            <div class="email">
-                                <i class="bi bi-envelope"></i>
-                                <h4><?= setting('contact_us_email_title') ?></h4>
-                                <p><?= setting('contact_us_email_address') ?></p>
-                            </div>
 
-                            <div class="phone">
-                                <i class="bi bi-phone"></i>
-                                <h4><?= setting('contact_us_call_title') ?></h4>
-                                <p><?= setting('contact_us_call_number') ?></p>
-                            </div>
 
-                        </div>
 
-                    </div>
-
-                    <div class="col-lg-8 mt-5 mt-lg-0">
-
-                        <form action="/save-contact-us" method="post" role="form" class="php-email-form">
-                            {{ csrf_field() }}
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Your Email" required>
-                                </div>
-                            </div>
-                            <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" id="subject"
-                                    placeholder="Subject" required>
-                            </div>
-                            <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                            </div>
-                            <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
-                        </form>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Contact Section -->
-
-    </main><!-- End #main -->
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="footer-info">
-                            <h3>{{ env('APP_NAME') }}<span>.</span></h3>
-                            <p>
-                                <?= setting('contact_us_location_address') ?><br><br>
-                                <strong>Phone:</strong> <?= setting('contact_us_call_number') ?><br>
-                                <strong>Email:</strong> <?= setting('contact_us_email_address') ?><br>
-                            </p>
-                            <div class="social-links mt-3">
-                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Packages</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Team</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Contact Us</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div> -->
-
-                    <!--<div class="col-lg-4 col-md-6 footer-newsletter">-->
-                    <!--    <h4>Our Newsletter</h4>-->
-                    <!--    <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>-->
-                    <!--    <form action="" method="post">-->
-                    <!--        <input type="email" name="email"><input type="submit" value="Subscribe">-->
-                    <!--    </form>-->
-
-                    <!--</div>-->
-
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="copyright">
-                &copy; Copyright <strong><span>{{ env('APP_NAME') }}</span></strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/ -->
-                <!--Designed by <a href="/">FBT</a>-->
-            </div>
-        </div>
-    </footer><!-- End Footer -->
-
-    <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
-
-    <!-- Vendor JS Files -->
-    <script src="../homepage-assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="../homepage-assets/vendor/aos/aos.js"></script>
-    <script src="../homepage-assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../homepage-assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="../homepage-assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="../homepage-assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="../homepage-assets/vendor/php-email-form/validate.js"></script>
-
-    <!-- Template Main JS File -->
-    <script src="../homepage-assets/js/main.js"></script>
+<script src="{{ asset('assets/templates/basic//js/owl.js') }}"></script>
+<script src="{{ asset('assets/templates/basic//js/main.js') }}"></script>
 
 </body>
 

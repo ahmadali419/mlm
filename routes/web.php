@@ -38,6 +38,8 @@ Route::post('/webhooks/order-created', function (Illuminate\Http\Request $reques
     return response()->json(['message' => 'Webhook received.'], 200);
 });
 Route::get('/',[App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('about',[App\Http\Controllers\HomeController::class, 'about'])->name('about');
+Route::get('contact',[App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('/verify/account/{user_id}',[App\Http\Controllers\HomeController::class, 'verifyAccount'])->name('verify.account');
 Route::get('/verify-login-account/{user_id}',[App\Http\Controllers\HomeController::class, 'verifyLoginAccount'])->name('verify.login.account');
 Route::post('/save-contact-us',[App\Http\Controllers\HomeController::class, 'saveContact'])->name('saveContact');

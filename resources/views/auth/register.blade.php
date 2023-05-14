@@ -76,7 +76,7 @@ button {
 @endsection
 @section('content')
     <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
+    {{-- <section class="breadcrumbs">
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
@@ -88,7 +88,7 @@ button {
             </div>
 
         </div>
-    </section><!-- End Breadcrumbs -->
+    </section><!-- End Breadcrumbs --> --}}
   @if($errors->any())
         <div class="row collapse">
             <ul class="alert-box warning radius">
@@ -98,13 +98,13 @@ button {
             </ul>
         </div>
         @endif
-    <section class="inner-page">
+    <section class="inner-page" style="margin-top:64px">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 offset-md-4">
                     <div class="card">
                         <div class="card-body">
-                            <h3 class="text-center">Create an account</h3>
+                            <h4 class="text-center">Create an account</h4>
                             <p class="text-center">Already have an account? <a href="{{ route('login') }}">Sign in here</a></p>
                             <form id="addForm" class="form w-100 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate"
                                 id="kt_sign_up_form">
